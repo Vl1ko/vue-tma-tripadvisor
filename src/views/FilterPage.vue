@@ -1,7 +1,7 @@
 <script setup>
-import { ref, onMounted, watch, reactive } from 'vue'
+import { onMounted, watch, reactive } from 'vue'
 import { useRouter } from 'vue-router'
-import { initBackButton, initMainButton, initPopup } from '@tma.js/sdk'
+import { initBackButton, initMainButton } from '@tma.js/sdk'
 import { document } from 'postcss'
 
 const router = useRouter()
@@ -144,6 +144,18 @@ watch(inputs, (newValue) => {
           id="pohod"
           name="filter"
           value="Походы"
+          v-model="inputs.name"
+        />
+      </div>
+
+      <div class="grid grid-cols-2 ml-2 mb-3 items-center">
+        <label for="photo">Фотографы</label>
+        <input
+          class="h-6 text-right ml-36 accent-[#007aff]"
+          type="radio"
+          id="photo"
+          name="filter"
+          value="Фотограф"
           v-model="inputs.name"
         />
       </div>
